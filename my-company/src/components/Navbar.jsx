@@ -8,6 +8,7 @@ function Navbar() {
         backgroundColor: "#333",
         display: "flex",
         gap: "15px",
+        justifyContent: "space-around",
       }}
     >
       <Link style={{ color: "#fff" }} to="/">
