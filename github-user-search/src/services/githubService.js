@@ -1,9 +1,5 @@
 import axios from "axios";
 
-const githubApi = axios.create({
-  baseURL: "https://api.github.com",
-});
-
 export const fetchAdvancedUsers = async ({
   username,
   location,
@@ -20,8 +16,8 @@ export const fetchAdvancedUsers = async ({
     query += ` repos:>=${minRepos}`;
   }
 
-  const response = await githubApi.get(
-    `/search/users?q=${query}&page=${page}&per_page=10`,
+  const response = await axios.get(
+    `https://api.github.com/search/users?q=${query}&page=${page}&per_page=10`,
   );
 
   return response.data.items;
