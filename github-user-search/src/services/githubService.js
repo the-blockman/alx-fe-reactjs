@@ -1,5 +1,11 @@
 import axios from "axios";
 
+// Basic search (Task 1)
+export const fetchUserData = async (username) => {
+  const response = await axios.get(`https://api.github.com/users/${username}`);
+  return response.data;
+};
+
 export const fetchAdvancedUsers = async ({
   username,
   location,
