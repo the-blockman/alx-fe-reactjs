@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import recipesData from "../data.json";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -37,9 +38,16 @@ const HomePage = () => {
 
               <p className="text-gray-600 text-sm mb-4">{recipe.summary}</p>
 
-              <button className="text-blue-600 font-medium hover:underline">
+              <Link
+                to={`/recipe/${recipe.id}`}
+                className="text-blue-600 font-medium hover:underline"
+              >
                 View Recipe →
-              </button>
+              </Link>
+
+              {/*<button className="text-blue-600 font-medium hover:underline">
+                View Recipe →
+              </button>*/}
             </div>
           </div>
         ))}
