@@ -13,7 +13,7 @@ describe("TodoList Component", () => {
   test("adds a new todo", () => {
     render(<TodoList />);
 
-    const input = screen.getByPlaceholderText("Add todo");
+    const input = screen.getByPlaceholderText("Add a new todo");
     const addButton = screen.getByText("Add");
 
     fireEvent.change(input, {
